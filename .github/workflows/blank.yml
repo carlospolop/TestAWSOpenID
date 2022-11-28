@@ -1,15 +1,16 @@
-# This is a basic workflow to help you get started with Actions
-
-name: 'Test AWS'
+name: 'Aws testing'
  
 # The workflow should only trigger on pull requests to the main branch
 on:
   workflow_dispatch:
+  
   pull_request:
     branches:
       - main
  
-
+# Required to get the ID Token that will be used for OIDC
+permissions:
+  id-token: write
  
 jobs:
   read-dev:
